@@ -6,7 +6,7 @@ Unlike others, this is the first project I implemented unsupervised ML algorithm
 group the unlabeled datasets or written digits in this case into its apporirate cluster. 
 
 # Install and Run the Project
-This project requires installed Python library: scikit-learn
+This project requires installed Python library: scikit-learn and numpy
 
 Note: the breast cancer data is included when we download scikit-learn. You can access it by including this import and function below:
 ```
