@@ -2,11 +2,13 @@ from sklearn.datasets import load_digits
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import scale
 import numpy as np
-import sklearn
+import pylab as pl
 from sklearn import metrics
 
 digits = load_digits()
 data = scale(digits.data) #features
+print(digits.images)
+
 y = digits.target # target
 
 # In this case 1797 samples and 64 features
@@ -28,5 +30,10 @@ def bench_k_means(estimator, name, data):
                                       metric='euclidean')))
 # Find out the number of centroids to use K-Means Clustering
 k = len(np.unique(y)) #10
+
 clf = KMeans(n_clusters= k, init = "random", n_init= 10)
-bench_k_means(clf, "l", data)
+bench_k_means(clf, "Score", data)
+
+pl.gray()
+pl.matshow(digits.images[0])
+pl.show()
